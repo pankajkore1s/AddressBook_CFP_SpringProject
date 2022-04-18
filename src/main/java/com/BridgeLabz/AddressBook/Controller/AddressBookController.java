@@ -1,6 +1,8 @@
 package com.BridgeLabz.AddressBook.Controller;
 
+import com.BridgeLabz.AddressBook.Service.IAddressBookService;
 import com.BridgeLabz.AddressBook.dto.AddressBookDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/addressbook")
 public class AddressBookController {
     //Fetch all contacts From AddressBok
+    @Autowired
+    private IAddressBookService addressBookService;
     @RequestMapping(value= {"","/","get"})
     public ResponseEntity<String>getContact(){
         return new ResponseEntity<String>("call success", HttpStatus.OK);

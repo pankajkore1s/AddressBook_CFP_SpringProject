@@ -1,7 +1,5 @@
 package com.BridgeLabz.AddressBook.Entity;
 
-import com.BridgeLabz.AddressBook.dto.AddressBookDTO;
-
 public class Contact {
     private int Id;
     private String firstName;
@@ -13,18 +11,30 @@ public class Contact {
     private long contactNumber;
     private String emailId;
 
-    public Contact(int id, AddressBookDTO addressBookDTO) {
-        this.Id = id;
-        this.firstName =addressBookDTO.firstName;
-        this.lastName =addressBookDTO.lastName;
-        this.address =addressBookDTO.address;
-        this.city =addressBookDTO.city;
-        this.zipCode =addressBookDTO.zipCode;
-        this.state =addressBookDTO.state;
-        this.contactNumber =addressBookDTO.contactNumber;
-        this.emailId =addressBookDTO.emailId;
+    public Contact(int id, String firstName, String lastName, String address, String city, int zipCode, String state, long contactNumber, String emailId) {
+        Id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.state = state;
+        this.contactNumber = contactNumber;
+        this.emailId = emailId;
     }
-    public Contact(){
 
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "Id=" + Id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", zipCode=" + zipCode +
+                ", state='" + state + '\'' +
+                ", contactNumber=" + contactNumber +
+                ", emailId='" + emailId + '\'' +
+                '}';
     }
 }
