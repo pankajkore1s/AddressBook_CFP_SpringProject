@@ -1,32 +1,38 @@
 package com.BridgeLabz.AddressBook.Entity;
 
+import com.BridgeLabz.AddressBook.dto.AddressBookDTO;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Contact {
-    private int Id;
+    private int id;
     private String firstName;
     private String lastName;
     private String address;
     private String city;
     private int zipCode;
     private String state;
-    private long contactNumber;
+    private String contactNumber;
     private String emailId;
 
-    public Contact(int id, String firstName, String lastName, String address, String city, int zipCode, String state, long contactNumber, String emailId) {
-        Id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.zipCode = zipCode;
-        this.state = state;
-        this.contactNumber = contactNumber;
-        this.emailId = emailId;
+    public Contact(int id, AddressBookDTO addressBookDTO) {
+        this.id = id;
+        this.firstName=addressBookDTO.firstName;
+        this.lastName=addressBookDTO.lastName;
+        this.address=addressBookDTO.address;
+        this.city =addressBookDTO.city;
+        this.zipCode =addressBookDTO.zipCode;
+        this.state =addressBookDTO.state;
+        this.contactNumber =addressBookDTO.contactNumber;
+        this.emailId = addressBookDTO.emailId;
     }
 
     @Override
     public String toString() {
         return "Contact{" +
-                "Id=" + Id +
+                "Id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +

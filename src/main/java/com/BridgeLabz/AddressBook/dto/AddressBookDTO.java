@@ -1,5 +1,8 @@
 package com.BridgeLabz.AddressBook.dto;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class AddressBookDTO {
     public String firstName;
     public String lastName;
@@ -7,19 +10,8 @@ public class AddressBookDTO {
     public String city;
     public int zipCode;
     public String state;
-    public long contactNumber;
+    public String contactNumber;
     public String emailId;
-
-    public AddressBookDTO(String firstName, String lastName, String address, String city, int zipCode, String state, long contactNumber, String emailId) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.zipCode = zipCode;
-        this.state = state;
-        this.contactNumber = contactNumber;
-        this.emailId = emailId;
-    }
 
     @Override
     public String toString() {
