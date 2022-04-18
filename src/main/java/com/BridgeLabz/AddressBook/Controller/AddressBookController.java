@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 public class AddressBookController {
     //Fetch all contacts From AddressBok
     @RequestMapping(value= {"","/","get"})
-    public ResponseEntity<String>getAddressBookData(){
+    public ResponseEntity<String>getContact(){
         return new ResponseEntity<String>("call success", HttpStatus.OK);
     }
 
     //Fetch Contact From AddressBook By ID
     @GetMapping("/get/{Id}")
-    public ResponseEntity<String>getAddressBookDataById(@PathVariable("Id")int Id){
+    public ResponseEntity<String>getContactById(@PathVariable("Id")int Id){
         return new ResponseEntity<String>("Call Success For Id: "+Id,HttpStatus.OK);
     }
 
