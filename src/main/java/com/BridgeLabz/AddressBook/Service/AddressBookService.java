@@ -20,7 +20,7 @@ public class AddressBookService implements IAddressBookService{
     @Override
     public Contact getContactById(int Id){
         Contact contactList=null;
-        contactList=new Contact(2,new AddressBookDTO("Pankaj","Kore","Anand-Nagar","Latur",413512,"Maharashtra","8149498627","bridge@gmail.com"));
+        contactList=new Contact(1,new AddressBookDTO("Pankaj","Kore","Anand-Nagar","Latur",413512,"Maharashtra","8149498627","bridge@gmail.com"));
         return contactList;
     }
 
