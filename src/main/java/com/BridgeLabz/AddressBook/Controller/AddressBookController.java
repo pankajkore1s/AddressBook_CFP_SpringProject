@@ -4,6 +4,7 @@ import com.BridgeLabz.AddressBook.Entity.Contact;
 import com.BridgeLabz.AddressBook.Service.IAddressBookService;
 import com.BridgeLabz.AddressBook.dto.AddressBookDTO;
 import com.BridgeLabz.AddressBook.dto.ResponseDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@Slf4j
 @RequestMapping("/addressbook")
 public class AddressBookController {
     //Fetch all contacts From AddressBok
@@ -19,6 +21,7 @@ public class AddressBookController {
     IAddressBookService addressBookService;
     @RequestMapping(value= {"","/","get"})
     public ResponseEntity<String>getContact(){
+        log.info("get call for Book");
         List<Contact> contactList=addressBookService.getContact();
         ResponseDTO responseDTO=new ResponseDTO("get call success",contactList);
         return new ResponseEntity(responseDTO, HttpStatus.OK);
