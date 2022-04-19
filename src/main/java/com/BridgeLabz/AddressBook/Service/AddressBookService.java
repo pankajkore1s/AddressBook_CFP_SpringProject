@@ -25,8 +25,8 @@ public class AddressBookService implements IAddressBookService{
 
     @Override
     public Contact getContactById(long id){
-       return contactRepository.findById(id);
-               //.orElseThrow(()->new AddressBookException("contact with this id doesn't exist"));
+       return contactRepository.findById(id)
+               .orElseThrow(()->new AddressBookException("contact with this id doesn't exist"));
     }
 
     @Override
