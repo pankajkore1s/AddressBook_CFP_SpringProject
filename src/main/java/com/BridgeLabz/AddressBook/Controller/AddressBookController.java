@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,7 +40,7 @@ public class AddressBookController {
 
     //Add New Contact In AddressBook
     @PostMapping("/addcontact")
-    public ResponseEntity<ResponseDTO> addNewContact(@RequestBody AddressBookDTO addressBookDTO){
+    public ResponseEntity<ResponseDTO> addNewContact(@Valid @RequestBody AddressBookDTO addressBookDTO){
         Contact contact=null;
         contact=addressBookService.addNewContact(addressBookDTO);
         ResponseDTO responseDTO=new ResponseDTO("Successfully Added New Contact",contact);
@@ -48,7 +49,7 @@ public class AddressBookController {
 
     //Update Contacts From AddressBook
     @PutMapping("/updatecontact/{id}")
-    public ResponseEntity<ResponseDTO>updateContact(@PathVariable ("id")long id,@RequestBody AddressBookDTO addressBookDTO){
+    public ResponseEntity<ResponseDTO>updateContact(@Valid @PathVariable ("id")long id,@RequestBody AddressBookDTO addressBookDTO){
         Contact contact=null;
         contact=addressBookService.updateContact(id,addressBookDTO);
         ResponseDTO responseDTO=new ResponseDTO("Successfully Updated Contact",contact);

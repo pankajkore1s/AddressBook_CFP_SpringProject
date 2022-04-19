@@ -2,6 +2,7 @@ package com.BridgeLabz.AddressBook.Service;
 
 import com.BridgeLabz.AddressBook.Entity.Contact;
 //import com.BridgeLabz.AddressBook.Exception.AddressBookException;
+import com.BridgeLabz.AddressBook.Exception.AddressBookException;
 import com.BridgeLabz.AddressBook.Repository.ContactRepository;
 import com.BridgeLabz.AddressBook.dto.AddressBookDTO;
 import lombok.extern.slf4j.Slf4j;
