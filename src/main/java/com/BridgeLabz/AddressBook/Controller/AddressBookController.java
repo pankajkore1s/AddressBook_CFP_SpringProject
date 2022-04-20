@@ -39,7 +39,7 @@ public class AddressBookController {
     }
 
     //Add New Contact In AddressBook
-    @PostMapping("/addcontact")
+    @PostMapping("/register")
     public ResponseEntity<ResponseDTO> addNewContact(@Valid @RequestBody AddressBookDTO addressBookDTO){
         Contact contact=null;
         contact=addressBookService.addNewContact(addressBookDTO);

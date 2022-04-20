@@ -8,17 +8,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
-
-
-@Getter
-@Setter
 @Entity
 @Table(name="contactsDB")
 public @Data class Contact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="Id")
+    @Column(name="id")
     private long id;
     @Column(name="first_name")
     private String firstName;
@@ -30,10 +26,6 @@ public @Data class Contact {
     private String state;
     private String contactNumber;
     private String emailId;
-
-    @ElementCollection
-    @CollectionTable(name="addressBook",joinColumns = @JoinColumn(name="id"))
-    private List<String> department;
 
     public Contact() {
     }
